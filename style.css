@@ -1,0 +1,349 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #303030;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-image: url("asset/images.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header h1 {
+text-align: center;
+font-size: 65px;
+font-family: Arial, Helvetica, sans-serif;
+color: #f1f1f1f1;
+margin: 25px 0;
+}
+
+.profile {
+  position: relative;
+  display: grid;
+}
+
+.profile img {
+  width: 200px;
+  height: 200px;
+  justify-self: center;
+}
+
+.profile h2 {
+  justify-self: center;
+  color: #E7E7E7;
+  font-size: 40px;
+}
+
+.profile ul {
+  display: flex;
+  justify-content: center;
+  transform: translateX(-20px);
+  gap: 25px;
+}
+
+.profile ul li {
+  list-style: none;
+  font-size: 0.9em;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+}
+
+.profile li i {
+  display: flex;
+  justify-self: center;
+  color: white;
+  filter: drop-shadow(3px 3px 5px rgba(213, 213, 213, 0.3));
+}
+
+.profile .fa-youtube:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.profile .fa-instagram:hover {
+  color: transparent;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d8219e 60%, #285AEB 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  cursor: pointer;
+}
+
+.profile .fa-github:hover {
+  color: black;
+  background: white;
+  background-clip: text;
+  -webkit-background-clip: text;
+  cursor: pointer;
+}
+
+.profile .fa-linkedin-in:hover {
+  color: #0e76a8;
+  cursor: pointer;
+}
+
+.profile a {
+  text-decoration: none;
+}
+
+.buttons {
+  background-color: rgba(213, 213, 213, 0.175);
+  margin: 10px auto;
+  width: 25vh;
+  height: 7vh;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.buttons:hover {
+  background-color: rgba(213, 213, 213, 0.342);
+}
+
+.buttons p {
+  text-decoration: none;
+  color: #E7E7E7;
+  font-size: 20px;
+  display: inline-block;
+}
+
+.buttons a {
+  text-decoration: none;
+}
+
+a.grid-item{
+  display: block;
+  cursor: pointer;
+}
+
+a.grid-content {
+  cursor: pointer;
+}
+
+.grid {
+  max-width: 1300px;
+  width: 80%;
+  height: auto;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: center;
+  grid-gap: 10px;
+}
+
+.grid-item {
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  height: 200px;
+  transition: all .6s ease-in-out;
+  transform: scale(1);
+  z-index: 1;
+  border-radius: 1rem;
+}
+
+.grid-item:hover {
+  z-index: 2;
+  transform: scale(1.2)
+}
+
+.grid-item img {
+  position: relative;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-item video {
+  position: relative;
+  display: block;
+  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.grid-item .volume-icon {
+  position: absolute;
+  display: block;
+  background-color: transparent;
+  color: white;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  right: 0;
+  padding: 5px 5px;
+}
+
+.grid-content {
+  background-color: transparent;
+  position: absolute;
+  width: 300px;
+  bottom: 0;
+  padding: 5px 5px;
+  width: fit-content;
+}
+
+.grid-title {
+  font-family: fantasy;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 3px;
+  color: #E7E7E7;
+}
+
+.grid-text {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1px;
+  color: #ADD981;
+}
+
+.more-info {
+  position: relative;
+  margin: 100px;
+  justify-content: center;
+  display: block;
+  padding: 25px;
+  padding-bottom: 0px;
+  border: black solid 2px;
+  border-radius: 25px;
+}
+
+.more-info .buttons {
+  margin: 25px 0;
+  width: 15vh;
+  height: 5vh;
+}
+
+.more-info .buttons p{
+  font-size: 20px;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.more-info .info-header {
+  position: relative;
+}
+
+.more-info .info-header img {
+  display: block;
+  margin: 0 auto;
+}
+
+.more-info .info-header h1 {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-weight: 100;
+  font-size: 50px;
+  font-family: fantasy;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.more-info .info-header p.date {
+  text-align: center;
+  color: #ADD981;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 25px;
+  font-style: italic;
+}
+
+.more-info .info-header p.tools {
+  font-style: italic;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 0%;
+  color: #ADD981;
+}
+
+.more-info .info-header p.tools i {
+  color: red;
+}
+
+.more-info .description {
+  text-align: center;
+}
+
+.more-info .description h1 {
+  color: white;
+  text-decoration: underline #0e76a8;
+  text-align: left;
+  font-size: 30px;
+}
+
+.more-info .description p {
+  text-align: left;
+  color: #ADD981;
+}
+
+.more-info .description a {
+  color: #ADD981;
+  text-decoration: underline wheat;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.black-text {
+  color: black;
+}
+
+footer {
+  display: block;
+  margin-top: auto;
+  background-color: #444444;
+  position: relative;
+  bottom: 0%;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+footer i {
+  color: red;
+}
+
+footer p {
+  color: white;
+}
+
+footer a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  width: auto;
+  color: white;
+  animation: 0.4s ease-in-out;
+}
+
+footer a.underline::after {
+  content: "";
+  display: block;
+  background-color: wheat;
+  width: 0%;
+  height: 3px;
+  transition: width 0.2s ease-in-out;
+}
+
+footer a:hover::after {
+  width: 100%;
+}
+
