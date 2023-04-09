@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito|Saira&display=swap");
+
 body{
   margin: 0;
   padding: 0;
@@ -9,17 +11,232 @@ body{
 }
 
 header {
+  background-color: #ADD981;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*
   background-image: url("asset/images.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;*/
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #E7E7E7;
+  color: #444444;
+  padding: 15px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+
+nav h2 {
+  cursor: pointer;
+  font-family: "Lacquer";
+}
+
+nav ul {
+  height: 100%;
+  font-family: "Nunito";
+  margin: 0 50px 0 auto;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  text-transform: uppercase;
+  padding: 0 15px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+nav ul li:hover, nav ul li.current {
+  background-color: #444444;
+  color: #E7E7E7;
 }
 
 header h1 {
-text-align: center;
-font-size: 65px;
-font-family: Arial, Helvetica, sans-serif;
-color: #f1f1f1f1;
-margin: 25px 0;
+  text-align: center;
+  font-size: 65px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f1f1f1f1;
+  margin: 25px 0;
+}
+
+@media screen and (max-width: 850px)  {
+  nav ul {
+    transition: all 0.3s ease;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #444444;
+    color: #E7E7E7;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  nav.open ul {
+    transform: scaleY(1);
+  }
+
+  nav.open ul li {
+    font-size: 1.2rem;
+    width: 50%;
+    height: 60px;
+    justify-content: center;
+  }
+
+  nav.open h2 {
+    z-index: 2;
+    color: #E7E7E7;
+  }
+
+  .mobile-button {
+    z-index: 2;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    margin-left: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobile-button .line {
+    width: 80%;
+    height: 4px;
+    background-color: #444444;
+    margin: 3px 0;
+  }
+
+  .line {
+    transition: all 0.1s ease-in;
+  }
+
+  nav.open .mobile-button .line {
+    background-color: #E7E7E7;
+  }
+
+  nav.open .mobile-button .line:nth-child(2) {
+    display: none;
+  }
+
+  nav.open .mobile-button .line:nth-child(1) {
+    transform: translate(0px, 5px) rotate(-45deg);
+  }
+
+  nav.open .mobile-button .line:nth-child(3) {
+    transform: translate(0px, -5px) rotate(45deg);
+  }
+}
+
+section {
+  background-color: #E7E7E7;
+  text-align: center;
+}
+
+
+section:before {
+  background-color: #444444;
+  width: 20%;
+  height: 0.5%;
+  position: absolute;
+  content: '';
+  left: 50%;
+  transform: translateX(-50%); /* Ajout */
+}
+
+section h2 {
+  letter-spacing: 1.4px;
+  margin-top: 26px;
+  font-family: 'Saira', sans-serif;
+}
+
+.formation h3 {
+  letter-spacing: 1.2px;
+  font-size: 18px;
+  font-weight: 800;
+  font-family: 'Saira', sans-serif;
+}
+
+.formation p {
+  text-align: justify;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Saira', sans-serif;
+}
+
+.formation-list {
+  list-style: none;
+  background-color: #444444;
+  padding: 25px;
+  margin: 50px auto;
+  max-width: 30%;
+  border-radius: 5px;
+  border-left: solid 4px #004ffc;
+  text-align: left;
+}
+
+.formation {
+  position: relative;
+  border-bottom: 1px dashed #E7E7E7;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+}
+
+.formation::after {
+  position: absolute;
+  color: #444444;
+  content: attr(date);
+  top: 0;
+  left: -125px;
+  text-align: right;
+}
+
+.formation::before {
+  position: absolute;
+  background-color: #444444;
+  width: 10px;
+  height: 10px;
+  left: -35.5px;
+  border-radius: 50%;
+  border: #004ffc 4px solid;
+  content: "";
+}
+
+.formation:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Animation on Scoll class */
+.reveal {
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .profile {
@@ -55,6 +272,16 @@ margin: 25px 0;
   justify-content: center;
   align-items: center;
   font-size: 50px;
+}
+
+.profile .banniere {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile .banniere img, .profile .banniere h2{
+  margin: 10px;
 }
 
 .profile li i {
@@ -149,7 +376,7 @@ a.grid-content {
   height: 200px;
   transition: all .6s ease-in-out;
   transform: scale(1);
-  z-index: 1;
+  z-index: 0;
   border-radius: 1rem;
 }
 
