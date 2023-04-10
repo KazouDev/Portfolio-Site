@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito|Saira&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito|Saira|Lacquer&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -36,13 +36,13 @@ nav {
 
 nav h2 {
   cursor: pointer;
-  font-family: "Lacquer";
+  letter-spacing: 0.2em;
 }
 
 nav ul {
   height: 100%;
   font-family: "Nunito";
-  margin: 0 50px 0 auto;
+  margin: 0 15px 0 auto;
   list-style-type: none;
   display: flex;
   flex-direction: row;
@@ -99,6 +99,16 @@ nav ul li.current a span::after {
 
 nav ul li.current:hover span::after {
   background-color: #E7E7E7;
+}
+
+nav .light-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 header h1 {
@@ -158,13 +168,22 @@ header h1 {
     color: #E7E7E7;
   }
 
+  .light-button {
+    z-index: 2;
+    margin-left: auto;
+  }
+
+  nav.open .light-button{
+    color: #E7E7E7;
+  }
+
   .mobile-button {
     z-index: 2;
     cursor: pointer;
     width: 40px;
     height: 40px;
     display: flex;
-    margin-left: auto;
+    margin-left: 15px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -201,6 +220,7 @@ header h1 {
 section {
   background-color: #E7E7E7;
   text-align: center;
+  scroll-margin: 40px;
 }
 
 

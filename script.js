@@ -49,3 +49,19 @@ let nav_mobile_button = document.querySelector('.mobile-button');
 nav_mobile_button.addEventListener('click', async event => {
     menu.classList.toggle('open');
 });
+
+let dark_mode_button = document.querySelector('.light-button');
+dark_mode_button.addEventListener('click', async event => {
+    let button = dark_mode_button.querySelector('.fa-moon');
+    button.classList.toggle('fa-regular');
+    button.classList.toggle('fa-solid');
+});
+
+let menu_mobile_buttons = document.querySelectorAll('nav ul li a');
+menu_mobile_buttons.forEach(button => {
+    button.addEventListener('click', async event => {
+        if (window.innerWidth <= 850){
+            document.querySelector('nav').classList.toggle('open');
+        }
+    });
+});
