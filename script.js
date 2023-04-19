@@ -1,3 +1,18 @@
+const storage = window.localStorage;
+
+let dark_mode_button = document.querySelector('.light-button');
+
+initTheme();
+
+function initTheme(){
+    var theme = storage.getItem('theme') == null ? 'light' : storage.getItem('theme');
+    if (theme === 'dark'){
+        dark_mode_button.classList.toggle('fa-regular');
+        dark_mode_button.classList.toggle('fa-solid');
+        document.body.classList.toggle('darkmode');
+    }
+}
+
 const observerReveal = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -50,11 +65,16 @@ nav_mobile_button.addEventListener('click', async event => {
     menu.classList.toggle('open');
 });
 
-let dark_mode_button = document.querySelector('.light-button');
 dark_mode_button.addEventListener('click', async event => {
     let button = dark_mode_button.querySelector('.fa-moon');
+    if (document.body.classList.contains('darkmode')){
+        storage.setItem('theme', 'light');
+    } else {
+        storage.setItem('theme', 'dark');
+    }
     button.classList.toggle('fa-regular');
     button.classList.toggle('fa-solid');
+    document.body.classList.toggle('darkmode');
 });
 
 let menu_mobile_buttons = document.querySelectorAll('nav ul li a');

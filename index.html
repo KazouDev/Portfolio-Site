@@ -3,18 +3,34 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>َPortfolio</title>
+    <title>َLevacher Ethan</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/1f726f8aec.js" crossorigin="anonymous"></script>
  </head>
   <body>
-    <header>
-      <div class="header-content">
-        <h1>Portfolio</h1>
-        <div class="profile">
-          <div class="banniere">
-            <img src="asset/profile-picture.png" alt="">
-            <h2 class="name">LEVACHER Ethan</h2>
+    <nav>
+      <a href="#header"><h2>PORTFOLIO.</h2></a>
+      <ul>
+        <li section-link="formation"><a href="#formation"><span>Formation</span></a></li>
+        <li section-link="competence"><a href="#competence"><span>Compétences</span></a></li>
+        <li section-link="projet"><a href="#projet"><span>Projets</span></a></li>
+      </ul>
+      <div class="light-button">
+        <i class="fa-regular fa-moon"></i>
+      </div>
+      <div class="mobile-button">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+    <header class="pattern">
+      <div id="header">
+        <div class="header-content">
+          <div class="header-text">
+            <h3>Bonjour, je suis</h3>
+            <h1>Ethan Levacher</h1>
+            <p>Etudiant en BUT Informatique, à la recherche d'une alternance dans le développement informatique.</p>
           </div>
           <ul class="links">
             <li><a href=""></a><i class="fa-brands fa-youtube"></i></li>
@@ -26,24 +42,6 @@
         </div>
       </div>
     </header>
-
-    <nav>
-      <h2>PORTFOLIO</h2>
-      <ul>
-        <li section-link="formation"><a href="#formation"><span>Formation</span></a></li>
-        <li section-link="competence"><a href="#competence"><span>Compétences</span></a></li>
-        <li section-link="projet"><a href="#projet"><span>Projets</span></a></li>
-        <li section-link="loisirs"><a href="#loisirs"><span>Loisirs</span></a></li>
-      </ul>
-      <div class="light-button">
-        <i class="fa-regular fa-moon"></i>
-      </div>
-      <div class="mobile-button">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-    </nav>
 
     <section id="formation">
       <h2 class="reveal">Formation</h2>
@@ -69,68 +67,145 @@
 
     <section id="competence">
       <h2 class="reveal">Compétences</h2>
-      <ul class="formation-list reveal">
-        <li class="formation" date="2020-2022">
-          <h3 class="formation-title">B.U.T Informatique</h3>
-          <p>Formation du BUT Informatique à l'IUT de Lannion</p>
-        </li>
-        <li class="formation" date="2020-2022">
-          <h3 class="formation-title">B.U.T Informatique</h3>
-          <p>Formation du BUT Informatique à l'IUT de Lannion. Durant cette formation j'ai eu l'opportuné de développer énormément de nouvelles compétences.</p>
-        </li>
-        <li class="formation" date="2020-2022">
-          <h3 class="formation-title">B.U.T Informatique</h3>
-          <p>Formation du BUT Informatique à l'IUT de Lannion</p>
-        </li>
-        <li class="formation" date="2022-2025">
-          <h3 class="formation-title">Bac Général</h3>
-          <p>BAC G au Lycée du Kreisker</p>
-        </li>
-      </ul>
+      <div class="competence-container reveal">
+        <h3>Dev Web</h3>
+        <div class="cards-container reveal">
+          <div class="competence-cards reveal">
+            <img src="asset/logo/html.png" alt="logo HTML" title="HTML Logo">
+            <h4>HTML</h4>
+          </div>
+          <div class="competence-cards reveal">
+            <img src="asset/logo/css.png" alt="logo HTML" title="HTML Logo">
+            <h4>CSS</h4>
+          </div>
+          <div class="competence-cards reveal">
+            <img src="asset/logo/javascript.png" alt="logo HTML" title="HTML Logo">
+            <h4>JavaScript</h4>
+          </div>
+        </div>
+      </div>
+      <div class="competence-container reveal">
+        <h3>Dev Algo</h3>
+        <div class="cards-container reveal">
+          <div class="competence-cards reveal">
+            <img src="asset/logo/C.svg" alt="logo HTML" title="HTML Logo">
+            <h4>C</h4>
+          </div>
+          <div class="competence-cards reveal">
+            <div class="imgs">
+              <img src="asset/logo/Java-Dark.svg" alt="logo HTML" title="HTML Logo">
+              <img src="asset/logo/Java-Light.svg" alt="">
+            </div>
+            <h4>Java</h4>
+          </div>
+          <div class="competence-cards reveal">
+            <div class="imgs">
+              <img src="asset/logo/Python-Dark.svg" alt="logo HTML" title="HTML Logo">
+              <img src="asset/logo/Python-Light.svg" alt="">
+            </div>
+            <h4>Python</h4>
+          </div>
+        </div>
+      </div>
+      <div class="competence-container reveal">
+        <h3>Base de donnée</h3>
+        <div class="cards-container reveal">
+          <div class="competence-cards reveal">
+            <img src="asset/logo/C.svg" alt="logo HTML" title="HTML Logo">
+            <h4>SQL</h4>
+          </div>
+          <div class="competence-cards reveal">
+            <div class="imgs">
+              <img src="asset/logo/PostgreSQL-Dark.svg" alt="logo PostgreSQL" title="HTML PostgreSQL">
+              <img src="asset/logo/PostgreSQL-Light.svg" alt="">
+            </div>
+            <h4>PostegreSQL</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="competence-container reveal">
+        <h3>Système</h3>
+        <div class="cards-container reveal">
+          <div class="competence-cards reveal">
+            <div class="imgs">
+              <img src="asset/logo/Linux-Dark.svg" alt="logo Linux" title="Linux Logo">
+              <img src="asset/logo/Linux-Light.svg" alt="">
+            </div>
+            <h4>Linux</h4>
+          </div>
+          <div class="competence-cards reveal">
+            <div class="imgs">
+              <img src="asset/logo/Java-Dark.svg" alt="logo HTML" title="HTML Logo">
+              <img src="asset/logo/Java-Light.svg" alt="">
+            </div>
+            <h4>Windows</h4>
+          </div>
+          <div class="competence-cards reveal">
+            <div class="imgs">
+              <img src="asset/logo/Bash-Dark.svg" alt="logo Bash" title="HTML Bash">
+              <img src="asset/logo/Bash-Light.svg" alt="">
+            </div>
+            <h4>Bash</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="competence-container reveal">
+        <h3>Autres</h3>
+        <div class="cards-container reveal">
+          <div class="competence-cards reveal">
+            <div class="imgs">
+              <img src="asset/logo/Github-Dark.svg" alt="logo Github" title="Github Logo">
+              <img src="asset/logo/Github-Light.svg" alt="">
+            </div>
+            <h4>Github</h4>
+          </div>
+          <div class="competence-cards reveal">
+            <div class="imgs">
+              <img src="asset/logo/Figma-Dark.svg" alt="logo Figma" title="HTML Figma">
+              <img src="asset/logo/Figma-Light.svg" alt="">
+            </div>
+            <h4>Figma</h4>
+          </div>
+          <div class="competence-cards reveal">
+            <div class="imgs">
+              <img src="asset/logo/Python-Dark.svg" alt="logo HTML" title="HTML Logo">
+              <img src="asset/logo/Python-Light.svg" alt="">
+            </div>
+            <h4>Teams</h4>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <section id="projet">
       <h2 class="reveal">Projets Réalisés</h2>
-      <ul class="formation-list reveal">
-        <li class="formation" date="2020-2022">
-          <h3 class="formation-title">B.U.T Informatique</h3>
-          <p>Formation du BUT Informatique à l'IUT de Lannion</p>
-        </li>
-        <li class="formation" date="2020-2022">
-          <h3 class="formation-title">B.U.T Informatique</h3>
-          <p>Formation du BUT Informatique à l'IUT de Lannion. Durant cette formation j'ai eu l'opportuné de développer énormément de nouvelles compétences.</p>
-        </li>
-        <li class="formation" date="2020-2022">
-          <h3 class="formation-title">B.U.T Informatique</h3>
-          <p>Formation du BUT Informatique à l'IUT de Lannion</p>
-        </li>
-        <li class="formation" date="2022-2025">
-          <h3 class="formation-title">Bac Général</h3>
-          <p>BAC G au Lycée du Kreisker</p>
-        </li>
-      </ul>
-    </section>
+      <div class="projet-container reveal">
+        <div class="projet-card reveal">
+          <img src="asset/image2.png" alt="">
+          <div class="projet-info">
+            <h3>Gestion des Stocks</h3>
+            <p>Application développé dans le cadre d'un projet.</p>
+            <ul>
+              <li>Python</li>
+              <li>SQL</li>
+              <li>JavaScript</li>
+            </ul>
+            <button>Voir Plus</button>
+          </div>
+        </div>
 
-    <section id="loisirs">
-      <h2 class="reveal">Compétences</h2>
-      <ul class="formation-list reveal">
-        <li class="formation" date="2020-2022">
-          <h3 class="formation-title">B.U.T Informatique</h3>
-          <p>Formation du BUT Informatique à l'IUT de Lannion</p>
-        </li>
-        <li class="formation" date="2020-2022">
-          <h3 class="formation-title">B.U.T Informatique</h3>
-          <p>Formation du BUT Informatique à l'IUT de Lannion. Durant cette formation j'ai eu l'opportuné de développer énormément de nouvelles compétences.</p>
-        </li>
-        <li class="formation" date="2020-2022">
-          <h3 class="formation-title">B.U.T Informatique</h3>
-          <p>Formation du BUT Informatique à l'IUT de Lannion</p>
-        </li>
-        <li class="formation" date="2022-2025">
-          <h3 class="formation-title">Bac Général</h3>
-          <p>BAC G au Lycée du Kreisker</p>
-        </li>
-      </ul>
+        <div class="projet-card reveal">
+          <img src="asset/image2.png" alt="">
+        </div>
+
+        <div class="projet-card reveal">
+          <img src="asset/image2.png" alt="">
+        </div>
+      </div>
+      
     </section>
     <footer>
       <p>Made with <i class="fas fa-heart"></i> by <a class="underline" href="https://github.com/KazouDev">Kazou</a></p>
