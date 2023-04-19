@@ -253,7 +253,6 @@ nav .light-button {
 }
 
 header {
-  
   height: calc(100vh - (var(--navbar-height) + 2*var(--navbar-padding)));
 }
 
@@ -267,6 +266,7 @@ header {
 
 .header-content {
   max-width: 35rem;
+  z-index: 1;
 }
 
 #header h3 {
@@ -608,7 +608,7 @@ body.darkmode .competence-cards .imgs img:nth-child(1){
   cursor: pointer;
 }
 
-.projet-card:hover .projet-info, .projet-info:hover {
+.projet-card:hover .projet-info, .projet-info:hover{
   opacity: 1;
   bottom: 0;
 }
