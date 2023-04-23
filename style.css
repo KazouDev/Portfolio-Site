@@ -697,7 +697,6 @@ body.modal-show {
   margin: 0;
   touch-action: none;
   -ms-touch-action: none;
-  height: 100vh;
 }
 
 .modal-box {
