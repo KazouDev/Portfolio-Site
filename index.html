@@ -6,6 +6,10 @@
     <title>َLevacher Ethan</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/1f726f8aec.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
  </head>
   <body ontouchstart>
     <nav>
@@ -33,12 +37,10 @@
             <p>Etudiant en BUT Informatique, à la recherche d'une alternance dans le développement informatique.</p>
           </div>
           <ul class="links">
-            <li><a href=""></a><i class="fa-brands fa-youtube"></i></li>
-            <li><a href=""></a><i class="fab fa-github"></i></li>
-            <li><a href=""></a><i class="fa-brands fa-instagram"></i></li>
-            <li><a href=""></a><i class="fa-brands fa-linkedin-in"></i></li>
+            <li><a href="https://github.com/KazouDev"><i class="fab fa-github"></i></li></a>
+            <li><a href="https://www.linkedin.com/in/ethan-levacher/"><i class="fa-brands fa-linkedin-in"></i></a></li>
           </ul>
-          <a class="buttons"><p>Télécharger CV<i class="fa-solid fa-cloud-arrow-down" style='margin-left: 10px;'></i></p></a>
+          <a class="buttons" href="./asset/LEVACHER_Ethan_CV.pdf"><p>Télécharger CV<i class="fa-solid fa-cloud-arrow-down" style='margin-left: 10px;'></i></p></a>
         </div>
       </div>
     </header>
@@ -148,6 +150,10 @@
             </div>
             <h4>Bash</h4>
           </div>
+          <div class="competence-cards reveal">
+            <img src="asset/logo/Docker.svg" alt="">
+            <h4>Docker</h4>
+          </div>
         </div>
       </div>
 
@@ -187,25 +193,219 @@
           <img src="asset/image2.png" alt="">
           <div class="projet-info">
             <h3>Gestion des Stocks</h3>
-            <p>Application développé dans le cadre d'un projet.</p>
+            <p>Application développé dans le cadre d'un projet durant mon année de terminale en I.S.N</p>
             <ul>
               <li>Python</li>
               <li>SQL</li>
               <li>JavaScript</li>
             </ul>
-            <button>Voir Plus</button>
+            <button data-target="gestionstock">Voir Plus</button>
           </div>
         </div>
 
         <div class="projet-card reveal">
           <img src="asset/image2.png" alt="">
+          <div class="projet-info">
+            <h3>Puissance 4</h3>
+            <p>Application développé dans le cadre d'un projet durant mon année de terminale en I.S.N</p>
+            <ul>
+              <li>Langage C</li>
+              <li>Doxygen</li>
+            </ul>
+            <button data-target="puissance4">Voir Plus</button>
+          </div>
         </div>
 
         <div class="projet-card reveal">
           <img src="asset/image2.png" alt="">
+          <div class="projet-info">
+            <h3>Site internet vitrine</h3>
+            <p>Réalisation d'un site internet en équipe, pour des séjours touristique.</p>
+            <ul>
+              <li>Figma</li>
+              <li>HTML / CSS</li>
+              <li>Gitlab</li>
+            </ul>
+            <button data-target="sportkoh">Voir Plus</button>
+          </div>
+        </div>
+
+        <div class="projet-card reveal">
+          <img src="asset/image2.png" alt="">
+          <div class="projet-info">
+            <h3>Gestion d'un festival de musique</h3>
+            <p>Réalisation d'une base de données pour la gestion d'un festival de musique.</p>
+            <ul>
+              <li>PostegreSQL</li>
+            </ul>
+            <button data-target="bddfestival">Voir Plus</button>
+          </div>
+        </div>
+
+        <div class="projet-card reveal">
+          <img src="asset/image2.png" alt="">
+          <div class="projet-info">
+            <h3>Application création de PDF</h3>
+            <p>Réalisation d'une application permettant d'automatiser la création de PDF à partir de fichier texte et d'image.</p>
+            <ul>
+              <li>PHP</li>
+              <li>Bash</li>
+              <li>Docker</li>
+            </ul>
+            <button data-target="applipdf">Voir Plus</button>
+          </div>
         </div>
       </div>
       
+      <div id="gestionstock" class="projet-modal">
+        <div class="modal-box">
+          <div class="modal-header">
+            <h3>Gestion des Stocks</h3>
+            <i class="fa-sharp fa-solid fa-xmark modal-close"></i>
+          </div>
+          <div class="modal-content">
+            <div class="image">
+              <img src="asset/image2.png" alt="">
+            </div>
+            <div class="text">
+              <div class="items-text">
+                <h3>Description</h3>
+                <p>Projet réalisé en NSI durant mon année de terminale dans lequelle on devais créé une application. J'ai choisie la gestion des stocks afin de mélé interface graphique et base de données <br>Ce projet à permis de mettre en pratique la programmation orientée objet en Python, ainsi que l'utilisation de SQL avec Python.</p>
+              </div>
+              <div class="items-text">
+                <h3>Stack utilisé</h3>
+                <p>Python / SQLite</p>
+              </div>
+              <div class="items-text">
+                <h3>Compétences acquises</h3>
+                <p>Travail d'équipe / Adaptation à son environnement de travail / Autonomie</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="puissance4" class="projet-modal">
+        <div class="modal-box">
+          <div class="modal-header">
+            <h3>Application création PDF</h3>
+            <i class="fa-sharp fa-solid fa-xmark modal-close"></i>
+          </div>
+          <div class="modal-content">
+            <div class="image">
+              <img src="asset/image2.png" alt="">
+            </div>
+            <div class="text">
+              <div class="items-text">
+                <h3>Description</h3>
+                <p>Projet réalisé en NSI durant mon année de terminale dans lequelle on devais créé une application. J'ai choisie la gestion des stocks afin de mélé interface graphique et base de données</p>
+              </div>
+              <div class="items-text">
+                <h3>Stack utilisé</h3>
+                <p>PHP / Bash / Docker</p>
+              </div>
+              <div class="items-text">
+                <h3>Compétences acquises</h3>
+                <p>Travail d'équipe / Adaptation à son environnement de travail / Autonomie</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="sportkoh" class="projet-modal">
+        <div class="modal-box">
+          <div class="modal-header">
+            <h3>Application création PDF</h3>
+            <i class="fa-sharp fa-solid fa-xmark modal-close"></i>
+          </div>
+          <div class="modal-content">
+            <div class="image">
+              <img src="asset/image2.png" alt="">
+            </div>
+            <div class="text">
+              <div class="items-text">
+                <h3>Description</h3>
+                <p>Projet réalisé en NSI durant mon année de terminale dans lequelle on devais créé une application. J'ai choisie la gestion des stocks afin de mélé interface graphique et base de données</p>
+              </div>
+              <div class="items-text">
+                <h3>Stack utilisé</h3>
+                <p>PHP / Bash / Docker</p>
+              </div>
+              <div class="items-text">
+                <h3>Compétences acquises</h3>
+                <p>Travail d'équipe / Adaptation à son environnement de travail / Autonomie</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="bddfestival" class="projet-modal">
+        <div class="modal-box">
+          <div class="modal-header">
+            <h3>Application création PDF</h3>
+            <i class="fa-sharp fa-solid fa-xmark modal-close"></i>
+          </div>
+          <div class="modal-content">
+            <div class="image">
+              <img src="asset/image2.png" alt="">
+            </div>
+            <div class="text">
+              <div class="items-text">
+                <h3>Description</h3>
+                <p>Projet réalisé en NSI durant mon année de terminale dans lequelle on devais créé une application. J'ai choisie la gestion des stocks afin de mélé interface graphique et base de données</p>
+              </div>
+              <div class="items-text">
+                <h3>Stack utilisé</h3>
+                <p>PHP / Bash / Docker</p>
+              </div>
+              <div class="items-text">
+                <h3>Compétences acquises</h3>
+                <p>Travail d'équipe / Adaptation à son environnement de travail / Autonomie</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="applipdf" class="projet-modal">
+        <div class="modal-box">
+          <div class="modal-header">
+            <h3>Application création PDF</h3>
+            <i class="fa-sharp fa-solid fa-xmark modal-close"></i>
+          </div>
+          <div class="modal-content">
+            <div class="image">
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="asset/image2.png" alt=""></div>
+                  <div class="swiper-slide"><img src="asset/image2.png" alt=""></div>
+                  <div class="swiper-slide"><img src="asset/image2.png" alt=""></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+            <div class="text">
+              <div class="items-text">
+                <h3>Description</h3>
+                <p>Projet réalisé en NSI durant mon année de terminale dans lequelle on devais créé une application. J'ai choisie la gestion des stocks afin de mélé interface graphique et base de données</p>
+              </div>
+              <div class="items-text">
+                <h3>Stack utilisé</h3>
+                <p>PHP / Bash / Docker</p>
+              </div>
+              <div class="items-text">
+                <h3>Compétences acquises</h3>
+                <p>Travail d'équipe / Adaptation à son environnement de travail / Autonomie</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
     <footer>
       <p>Made with <i class="fas fa-heart"></i> by <a class="underline" href="https://github.com/KazouDev">Kazou</a></p>

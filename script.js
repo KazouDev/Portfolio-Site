@@ -38,7 +38,6 @@ const observerCurrent = new IntersectionObserver((entries) => {
                 last_current.classList.toggle('current');
             }
             let current = document.querySelector('[section-link='+entry.target.getAttribute('id')+']');
-            console.log('[section-link='+entry.target+']');
             current.classList.toggle('current');
             last_current = current;
         }
@@ -85,3 +84,44 @@ menu_mobile_buttons.forEach(button => {
         }
     });
 });
+
+let buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+    let target = button.getAttribute('data-target');
+    if (target != null){
+        button.addEventListener('click', async event => {
+            document.querySelector(`#${target}`).classList.toggle('show');
+            document.body.style.paddingRight = `${getScrollbarWidth()}px`
+            document.body.classList.toggle('modal-show');
+        });
+    }
+});
+
+let modal_close_buttons = document.querySelectorAll('.modal-close');
+modal_close_buttons.forEach(button => {
+    button.addEventListener('click', async event => {
+        var sbHeight = window.innerHeight * (window.innerHeight / document.body.offsetHeight);
+        document.body.style.paddingRight = `0px`
+        
+        document.body.classList.toggle('modal-show');
+        document.querySelector('.projet-modal.show').classList.toggle('show');
+    })
+});
+
+function getScrollbarWidth() {
+    return window.innerWidth - document.documentElement.clientWidth;
+}
+
+// Swiper.js
+
+var swiper = new Swiper(".mySwiper", {
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      dynamicBullets: true,
+      clickable: true,
+    },
+  });
