@@ -679,6 +679,7 @@ body.darkmode .competence-cards .imgs img:nth-child(1){
   background: rgb(255 255 255 / 40%);
   z-index: 2;
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   align-items: center;
   justify-content: center;
 }
