@@ -693,7 +693,7 @@ body.darkmode .competence-cards .imgs img:nth-child(1){
 }
 
 body.modal-show {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .modal-box {
