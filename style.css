@@ -159,7 +159,6 @@ nav .light-button {
     justify-content: space-around;
     transform: scaleY(0);
     transform-origin: top;
-    border-bottom: solid 3px #0e76a8;
   }
 
   nav ul li {
@@ -344,7 +343,7 @@ section:last-of-type {
 }
 
 .formation h3 {
-  color: var(--background);
+  color: var(--text-color);
   letter-spacing: 1.2px;
   font-size: 18px;
   font-weight: 800;
@@ -358,17 +357,23 @@ section:last-of-type {
   font-size: 16px;
   font-weight: 500;
   font-family: 'Saira', sans-serif;
+  line-height: 1.4em;
 }
 
 .formation-list {
   list-style: none;
-  background-color: var(--text-color);
   padding: 25px;
   margin: 50px auto;
-  max-width: 30%;
-  border-radius: 5px;
-  border-left: solid 4px #004ffc;
+  max-width: 40%;
+  border-left: solid 4px var(--text-color);
   text-align: left;
+
+  line-height: 1.4em;
+  font-size: 1.03em;   
+  list-style: none;
+  text-align: left;  
+  font-weight: 100;  
+  max-width: 40%; 
 }
 
 .formation {
@@ -378,24 +383,29 @@ section:last-of-type {
   padding-bottom: 15px;
 }
 
-.formation::after {
+.formation::before, .formation::after {
   position: absolute;
-  color: #444444;
-  content: attr(date);
+  display: block;
   top: 0;
+}
+
+.formation::after {
+  color: var(--text-color);
+  opacity: 0.75;
+  content: attr(date);
   left: -125px;
   text-align: right;
 }
 
 .formation::before {
-  position: absolute;
-  background-color: var(--text-color);
+  content: "";
+  background-color: var(--background);
   width: 10px;
   height: 10px;
-  left: -35.5px;
+  left: -36.5px;
+  top: 2px;
   border-radius: 50%;
-  border: #004ffc 4px solid;
-  content: "";
+  border: var(--text-color) 4px solid;
 }
 
 .formation:last-of-type {
@@ -404,10 +414,23 @@ section:last-of-type {
   padding-bottom: 0;
 }
 
+@media screen and (max-width: 700px) {
+
+    .formation-list {
+      max-width: 60%;
+      margin-left: 100px;
+    }
+
+    .formation::after {
+      text-align: center;
+      left: -120px;
+    }
+}
+
 .reveal {
-  transform: translateY(45%);
+  transform: translateY(30%);
   opacity: 0;
-  transition: 1s all ease;
+  transition: 1s transform ease, 1s opacity ease;
 }
 
 .reveal.active {

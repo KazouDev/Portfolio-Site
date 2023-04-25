@@ -18,12 +18,13 @@ const observerReveal = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             if (!entry.target.classList.contains('active')){
                 entry.target.classList.add('active');
+                observerReveal.unobserve(entry.target);
             }
         }
     });
 },
 {
-    threshold: 0.3
+    threshold: 0.1
 }
 );
 
