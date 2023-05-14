@@ -360,6 +360,27 @@ section:last-of-type {
   line-height: 1.4em;
 }
 
+p a, p a:link, p a:visited, p a:focus, p a:focus {
+  position: relative; 
+  display: inline-block;
+  color: var(--main-text-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+p a::after {
+  content: "";
+  display: block;
+  background-color: var(--text-color);
+  width: 0%;
+  height: 3px;
+  transition: width 0.2s ease-in-out;
+}
+
+p a:hover::after {
+  width: 100%;
+}
+
 .formation-list {
   list-style: none;
   padding: 25px;
@@ -394,6 +415,7 @@ section:last-of-type {
   opacity: 0.75;
   content: attr(date);
   left: -125px;
+  width: 80px;
   text-align: right;
 }
 
@@ -422,7 +444,6 @@ section:last-of-type {
     }
 
     .formation::after {
-      text-align: center;
       left: -120px;
     }
 }
@@ -617,12 +638,14 @@ body.darkmode .competence-cards .imgs img:nth-child(1){
   z-index: 0;
   position: relative;
   width: 350px;
+  height: 208px;
   transition: all 0.5s ease-in-out;
 }
 
 .projet-card img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .projet-card:hover {
@@ -761,7 +784,7 @@ body.modal-show {
 
 .image img {
   width: 60%;
-  height: 40%;
+  height: 100%;
 }
 
 .mySwiper {
@@ -858,8 +881,10 @@ footer a:hover::after {
 		opacity: 1;
 	}
 }
-
-.mySwiper {
-  width: 100%;
-  height: 100%;
+.swiper-slide {
+  height: auto !important;
+  text-align: center;
+}
+.swiper-content {
+  height: 100% !important
 }
