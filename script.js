@@ -143,7 +143,7 @@ inputs.forEach(input => {
                     /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(text) ? input.classList.remove('invalid') : input.classList.add('invalid');
                 }
             } else if (input.getAttribute('id') === "telephone"){
-                if ((!(/^\d+$/.test(e.key)) || input.value.length > 9)  && !(e.key == 'Delete' || e.key == 'Backspace')) e.preventDefault();
+                if ((!(/^\d+$/.test(e.key)) || input.value.length > 9)  && !(e.key == 'Delete' || e.key == 'Backspace' || e.key == 'Tab')) e.preventDefault();
             }
         } else {
             input.classList.remove('typed')
