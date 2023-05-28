@@ -3,8 +3,8 @@
 
 :root {
   --background: #E7E7E7;
-  --main-text-color: #618E3C;
-  --text-color: #575757;
+  --main-text-color: #00aa17;
+  --text-color: #5c5c5c;
   --text-second-color: black;
   --navbar-height: 35px;
   --navbar-padding: 15px;
@@ -37,7 +37,20 @@ html {
   height: 275px;
   background-color: var(--text-color);
   -webkit-mask-image: url(asset/wave-bottom.svg);
+  -webkit-mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: bottom;
+
   mask-image: url(asset/wave-bottom.svg);
+  mask-size: 100%;
+  mask-repeat: no-repeat;
+  mask-position: bottom;
+}
+
+@media screen and (min-width: 1600px){
+  .pattern:before {
+    height: 500px;
+  }
 }
 
 body{
@@ -256,6 +269,7 @@ header {
 }
 
 #header {
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -517,6 +531,7 @@ body.darkmode #header li i{
 }
 
 .buttons {
+  padding: 5px;
   background-color: var(--text-color);
   width: 30vh;
   height: 7vh;
@@ -568,6 +583,10 @@ h3 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+.competence-container:last-child, #projet {
+  padding-bottom: 30px;
 }
 
 .competence-cards {
@@ -906,7 +925,7 @@ footer a:hover::after {
   flex-direction: column;
   text-align: left;
   width: 90%;
-  max-width: 500px;
+  max-width: 650px;
   margin: 0.5rem;
 }
 
@@ -953,7 +972,6 @@ input.invalid ~ label, input.invalid ~ span, textarea.invalid ~ label, textarea.
 .contact-input textarea {
   padding-top: 15px;
   min-height: 100px;
-
 }
 
 .contact-input span {
@@ -980,8 +998,10 @@ input[type=number] {
 }
 
 .contact-form button {
-  width: 100px;
-  height: 30px;
+  margin-top: 10px;
+  width: 200px;
+  height: 50px;
+  font-size: 1.1em;
   background-color: var(--text-color);
   border: none;
   border-radius: 5px;
@@ -994,4 +1014,38 @@ input[type=number] {
   background-color: var(--background);
   border: var(--text-color) solid 2px;
   color: var(--text-color);
+}
+
+.image-flottant{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+
+.image-flottant > img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+a.image-flottant {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline;
+}
+
+
+@media screen and (max-width: 1000px){
+  .image-flottant {
+    display:none !important; 
+    visibility:hidden !important;
+  }  
+  .image-flottant > img {
+    display:none !important; 
+    visibility:hidden !important;
+  }
 }

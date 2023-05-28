@@ -219,6 +219,61 @@ contactForm.addEventListener('submit', e => {
         input.value = "";
     });
     messageArea.value = "";
-    
-
  });
+
+ function loadImage() {
+    var largeurHeader = document.getElementById("header").offsetWidth;
+    var hauteurHeader = document.getElementById("header").offsetHeight;
+    var imagesFlottantes = document.querySelectorAll(".image-flottant");
+  
+    for (var i = 0; i < imagesFlottantes.length; i++) {
+      var imageFlottante = imagesFlottantes[i];
+      var positionX = Math.random() * (largeurHeader - imageFlottante.offsetWidth);
+      var positionY = Math.random() * (hauteurHeader - imageFlottante.offsetHeight);
+      imageFlottante.style.left = positionX + "px";
+      imageFlottante.style.top = positionY + "px";
+    }
+  }
+  
+  function animerImagesFlottantes() {
+    var largeurHeader = document.getElementById("header").offsetWidth;
+    var hauteurHeader = document.getElementById("header").offsetHeight;
+    var imagesFlottantes = document.querySelectorAll(".image-flottant");
+  
+    if (window.innerWidth > 1000) {
+      for (var i = 0; i < imagesFlottantes.length; i++) {
+        var imageFlottante = imagesFlottantes[i];
+  
+        deplacerImage(imageFlottante, largeurHeader, hauteurHeader);
+      }
+    }
+    requestAnimationFrame(animerImagesFlottantes);
+  }
+  
+  function deplacerImage(image, largeurHeader, hauteurHeader) {
+    var positionX = parseFloat(image.style.left);
+    var positionY = parseFloat(image.style.top);
+    var vitesseX = parseFloat(image.getAttribute("data-vitesseX")) || (Math.random() - 0.5) * 3;
+    var vitesseY = parseFloat(image.getAttribute("data-vitesseY")) || (Math.random() - 0.5) * 3;
+  
+    positionX += vitesseX;
+    positionY += vitesseY;
+  
+    if (positionX <= 0 || positionX >= largeurHeader - image.offsetWidth) {
+      vitesseX *= -1;
+    }
+    if (positionY <= 0 || positionY >= hauteurHeader - image.offsetHeight) {
+      vitesseY *= -1;
+    }
+  
+    positionX = Math.max(0, Math.min(positionX, largeurHeader - image.offsetWidth));
+    positionY = Math.max(0, Math.min(positionY, hauteurHeader - image.offsetHeight));
+  
+    image.style.left = positionX + "px";
+    image.style.top = positionY + "px";
+    image.setAttribute("data-vitesseX", vitesseX);
+    image.setAttribute("data-vitesseY", vitesseY);
+  }
+  
+  loadImage();
+  animerImagesFlottantes();
