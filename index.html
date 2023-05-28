@@ -9,6 +9,7 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
  </head>
   <body ontouchstart>
@@ -18,6 +19,7 @@
         <li section-link="formation"><a href="#formation"><span>Formation</span></a></li>
         <li section-link="competence"><a href="#competence"><span>Compétences</span></a></li>
         <li section-link="projet"><a href="#projet"><span>Projets</span></a></li>
+        <li section-link="contact"><a href="#contact"><span>Contact</span></a></li>
       </ul>
       <div class="light-button">
         <i class="fa-regular fa-moon"></i>
@@ -451,8 +453,44 @@
           </div>
         </div>
       </div>
-
     </section>
+
+    <section id="contact" class="reveal">
+      <h2 reveal>Contactez-Moi</h2>
+      <form class="contact-form">
+        <div class="contact-input">
+          <input type="text" name="name" id="name" required>
+          <label for="name">Nom*</label>
+          <span>Vous devez saisir un nom !</span>
+        </div>
+
+        <div class="contact-input">
+          <input type="text" name="email" id="email" required>
+          <label for="email">Email*</label>
+          <span>Vous devez saisir une adresse mail valide !</span>
+        </div>
+
+        <div class="contact-input">
+          <input type="text" name="telephone" id="telephone">
+          <label for="telephone">Téléphone</label>
+        </div>
+
+        <div class="contact-input">        
+          <input type="text" name="objet" id="objet" required>          
+          <label for="objet">Objet*</label>  
+          <span>Vous devez saisir un objet !</span>
+        </div>
+
+        <div class="contact-input">
+          <textarea id="message" name="message" required></textarea>
+          <label for="message">Message*</label>
+          <span>Vous devez saisir un message d'au moins 15 caractères !</span>
+        </div>
+
+        <button>Envoyer</button>
+      </form>
+    </section>
+
     <footer>
       <p>Made with <i class="fas fa-heart"></i> by <a class="underline" href="https://github.com/KazouDev">Kazou</a></p>
     </footer>

@@ -1,4 +1,7 @@
 const storage = window.localStorage;
+const MAIL_MESSAGE_SIZE = 15;
+
+emailjs.init("VRcmXpRSmU6Ge9i1M");
 
 let dark_mode_button = document.querySelector('.light-button');
 
@@ -125,4 +128,97 @@ var swiper = new Swiper(".mySwiper", {
       dynamicBullets: true,
       clickable: true,
     },
-  });
+});
+
+var inputs = document.querySelectorAll('input');
+
+inputs.forEach(input => {
+    input.addEventListener('keydown', (e) => {
+        let text = getNewText(input.value, e);
+        if (text){
+            input.classList.add('typed');
+            input.classList.remove('invalid');
+            if (input.attributes.getNamedItem('required')){
+                if (input.getAttribute('id') == 'email'){
+                    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(text) ? input.classList.remove('invalid') : input.classList.add('invalid');
+                }
+            } else if (input.getAttribute('id') === "telephone"){
+                if ((!(/^\d+$/.test(e.key)) || input.value.length > 9)  && !(e.key == 'Delete' || e.key == 'Backspace')) e.preventDefault();
+            }
+        } else {
+            input.classList.remove('typed')
+            if (input.attributes.getNamedItem('required')) input.classList.add('invalid');       
+        }
+    });
+});
+
+var getNewText = (txt, e) => {
+    const ignoredKeys = ['ArrowLeft','ArrowRight','Tab','End','Home','ArrowUp','ArrowDown'];
+    const selection = (e.target.selectionEnd - e.target.selectionStart);
+    if (ignoredKeys.includes(e.key)) return txt;
+    let txtArray = txt.split('');
+    switch (e.key) {
+        case 'Backspace':
+            (selection === 0 && e.target.selectionStart > 0) ? txtArray.splice(e.target.selectionStart - 1, selection + 1) : txtArray.splice(e.target.selectionStart, selection);
+            break;
+        case 'Delete':
+            (selection === 0) ? txtArray.splice(e.target.selectionStart, selection + 1) : txtArray.splice(e.target.selectionStart, selection);
+            break;
+        default:
+            txtArray.splice(e.target.selectionStart, selection, e.key);
+            break;
+    }
+    return txtArray.join(''); 
+}
+
+let messageArea = document.getElementById('message');
+messageArea.addEventListener('keydown', (e) => {
+    let text = getNewText(messageArea.value, e);
+    console.log(text.length)
+    if (text && text.length > MAIL_MESSAGE_SIZE){
+        messageArea.classList.add('typed');
+        messageArea.classList.remove('invalid');
+    } else {
+        messageArea.classList.remove('typed')
+        messageArea.classList.add('invalid');       
+    }
+});
+
+const contactForm = document.querySelector('.contact-form');
+let btnForm = document.querySelector('.contact-form > button');
+
+contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    inputs.forEach(input => {
+        if (input.classList.contains('invalid')) {
+            input.focus();
+            return;
+        }
+    });
+    if (messageArea.value && messageArea.value.length < MAIL_MESSAGE_SIZE){
+        messageArea.classList.add('invalid');
+        messageArea.focus();
+        return;
+    }
+    btnForm.innerHTML = 'Envoie...';
+
+    const serviceID = 'default_service';
+    const templateID = 'template_4tgwr3k';
+ 
+    emailjs.sendForm(serviceID, templateID, e.target)
+        .then(() => {
+        btnForm.innerHTML = 'Envoyé !';
+        alert('Email envoyé avec succès !');
+        btnForm.disabled = true;
+    }, (err) => {
+        btnForm.innerHTML = 'Envoyer';
+        alert(JSON.stringify(err));
+    });
+
+    inputs.forEach(input => {
+        input.value = "";
+    });
+    messageArea.value = "";
+    
+
+ });
