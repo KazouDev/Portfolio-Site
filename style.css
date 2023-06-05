@@ -805,7 +805,7 @@ body.modal-show {
 }
 
 .projet-modal a {
-  font-size: 34px;
+  font-size: 50px;
   margin-left: 10px;
   color: var(--text-color);
   text-decoration: none;
