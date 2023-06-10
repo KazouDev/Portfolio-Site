@@ -513,7 +513,7 @@ body.darkmode #header li i{
   cursor: pointer;
 }
 
-#header .fa-github:hover, .projet-modal .fa-github:hover, h3 > a:hover i {
+#header .fa-github:hover {
   color: black;
   background: white;
   background-clip: text;
@@ -800,6 +800,10 @@ body.modal-show {
 .modal-header h3 a {
   font-size: 1.6em;
   color: var(--background);
+}
+
+.modal-header > h3 > a:hover i, .modal-header > i:hover  {
+  color: var(--main-text-color);
 }
 
 
