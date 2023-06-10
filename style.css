@@ -513,7 +513,7 @@ body.darkmode #header li i{
   cursor: pointer;
 }
 
-#header .fa-github:hover, .projet-modal .fa-github:hover {
+#header .fa-github:hover, .projet-modal .fa-github:hover, h3 > a:hover i {
   color: black;
   background: white;
   background-clip: text;
@@ -797,6 +797,13 @@ body.modal-show {
   margin-left: 10px;
 }
 
+.modal-header h3 a {
+  font-size: 1.6em;
+  color: var(--background);
+}
+
+
+
 .modal-header .modal-close {
   cursor: pointer;
   font-size: 1.6em;
@@ -823,7 +830,9 @@ body.modal-show {
 }
 
 .image img {
-  width: 50%;
+  max-width: 500px;
+  max-height: 250px;
+  width: 60%;
   height: 100%;
 }
 
@@ -1115,3 +1124,4 @@ a.image-flottant {
 .contact-box a:hover::after {
   width: 100%;
 }
+
