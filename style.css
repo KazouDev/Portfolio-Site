@@ -324,6 +324,49 @@ header {
   }
 }
 
+#quijesuis .container {
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container p {
+  text-align: center;
+}
+
+#quijesuis img {
+  min-width: 150px;
+  min-height: 150px;
+  width: 15%;
+  height: 15%;
+  margin: 25px;
+}
+
+#quijesuis p {
+  margin: 25px;
+  text-align: center;
+  max-width: 1200px;
+  min-width: 275px;
+  width: 60%;
+  color: var(--text-second-color);
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Saira', sans-serif;
+  line-height: 1.4em;
+}
+
+p a, p a:link, p a:visited, p a:focus, p a:focus {
+  position: relative; 
+  display: inline-block;
+  color: var(--main-text-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
 #header, section {
   scroll-margin-top: calc(var(--navbar-height) + 2*var(--navbar-padding));
 }
@@ -513,7 +556,7 @@ body.darkmode #header li i{
   cursor: pointer;
 }
 
-#header .fa-github:hover, .projet-modal .fa-github:hover {
+#header .fa-github:hover {
   color: black;
   background: white;
   background-clip: text;
@@ -741,10 +784,8 @@ body.darkmode .competence-cards .imgs img:nth-child(1){
   left: 0;
   z-index: 1050;
   display: none;
-  overflow-x: hidden;
   outline: 0;
   background: rgb(255 255 255 / 40%);
-  z-index: 2;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   align-items: center;
@@ -797,6 +838,17 @@ body.modal-show {
   margin-left: 10px;
 }
 
+.modal-header h3 a {
+  font-size: 1.6em;
+  color: var(--background);
+}
+
+.modal-header > h3 > a:hover i, .modal-header > i:hover  {
+  color: var(--main-text-color);
+}
+
+
+
 .modal-header .modal-close {
   cursor: pointer;
   font-size: 1.6em;
@@ -823,7 +875,16 @@ body.modal-show {
 }
 
 .image img {
-  width: 50%;
+  max-width: 500px;
+  max-height: 250px;
+  width: 60%;
+  height: 100%;
+}
+
+.image iframe {
+  max-width: 500px;
+  max-height: 250px;
+  width: 60%;
   height: 100%;
 }
 
@@ -1046,6 +1107,12 @@ input[type=number] {
   top: 0;
 }
 
+.image-flottant:hover {
+  outline: solid var(--text-color) 2px;
+  transform: scale(1.4);
+  transition: transform 0.5s ease-in-out;
+}
+
 .image-flottant > img{
   width: 100%;
   height: 100%;
@@ -1115,3 +1182,4 @@ a.image-flottant {
 .contact-box a:hover::after {
   width: 100%;
 }
+
