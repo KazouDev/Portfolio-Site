@@ -1110,7 +1110,7 @@ input[type=number] {
 }
 
 .image-flottant:hover {
-  outline: solid var(--text-color) 2px;
+  outline: solid var(--main-text-color) 2px;
   transform: scale(1.2);
   transition: transform 0.5s ease-in-out;
 }
