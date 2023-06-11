@@ -1105,11 +1105,13 @@ input[type=number] {
   border-radius: 50%;
   left: 0;
   top: 0;
+  transform: scale(1);
+  transition: transform 0.25s ease-in-out;
 }
 
 .image-flottant:hover {
   outline: solid var(--text-color) 2px;
-  transform: scale(1.4);
+  transform: scale(1.2);
   transition: transform 0.5s ease-in-out;
 }
 
