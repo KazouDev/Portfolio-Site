@@ -875,16 +875,7 @@ body.modal-show {
 }
 
 .image img {
-  max-width: 500px;
-  max-height: 250px;
-  width: 60%;
-  height: 100%;
-}
-
-.image iframe {
-  max-width: 500px;
-  max-height: 250px;
-  width: 60%;
+  width: 50%;
   height: 100%;
 }
 
