@@ -797,18 +797,6 @@ body.darkmode .competence-cards .imgs img:nth-child(1){
   animation: fadeIn 1s ease both;
 }
 
-.to-github {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  display: none;
-}
-
-.projet-modal.show .to-github {
-  display: flex;
-  animation: fadeIn 1s ease both;
-}
-
 .projet-modal.unshow {
   animation: fadeOut 0.6s ease both;
 }
@@ -824,6 +812,8 @@ body.modal-show {
   width: 50%;
   background-color: var(--text-color);
   padding: 5px 10px;
+  max-height: 93vh;
+  overflow-y: auto;
 }
 
 .modal-header {
