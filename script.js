@@ -277,3 +277,55 @@ contactForm.addEventListener('submit', e => {
   
   loadImage();
   animerImagesFlottantes();
+
+  function makeImagesDraggable() {
+    var imagesFlottantes = document.querySelectorAll(".image-flottant");
+  
+    imagesFlottantes.forEach(function (imageFlottante) {
+  
+      imageFlottante.addEventListener("mousedown", function (e) {
+        e.preventDefault();
+        if (e.target === imageFlottante || e.target.parentElement === imageFlottante) {
+          initDrag(e, imageFlottante);
+        }
+      });
+  
+      imageFlottante.addEventListener("mousemove", drag);
+      imageFlottante.addEventListener("mouseup", endDrag);
+    });
+  
+    var activeImage = null;
+    var initialX = 0;
+    var initialY = 0;
+    var offsetX = 0;
+    var offsetY = 0;
+  
+    function initDrag(e, imageFlottante) {
+      activeImage = imageFlottante;
+      initialX = e.clientX;
+      initialY = e.clientY;
+      offsetX = parseFloat(activeImage.style.left) || 0;
+      offsetY = parseFloat(activeImage.style.top) || 0;
+  
+      activeImage.classList.add("draggable");
+    }
+  
+    function drag(e) {
+      if (activeImage) {
+        var currentX = e.clientX - initialX;
+        var currentY = e.clientY - initialY;
+        var newX = offsetX + currentX;
+        var newY = offsetY + currentY;
+  
+        activeImage.style.left = newX + "px";
+        activeImage.style.top = newY + "px";
+      }
+    }
+  
+    function endDrag() {
+      activeImage.classList.remove("draggable");
+      activeImage = null;
+    }
+  }
+  
+  makeImagesDraggable();
