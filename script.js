@@ -278,6 +278,7 @@ contactForm.addEventListener('submit', e => {
   loadImage();
   animerImagesFlottantes();
 
+  var isDragging = false;
   function makeImagesDraggable() {
     var imagesFlottantes = document.querySelectorAll(".image-flottant");
   
@@ -322,9 +323,10 @@ contactForm.addEventListener('submit', e => {
       }
     }
   
-    function endDrag() {
-      activeImage.classList.remove("draggable");
-      activeImage = null;
+    function endDrag(e) {
+        e.preventDefault();
+        activeImage.classList.remove("draggable");
+        activeImage = null;
     }
   }
   
