@@ -332,3 +332,5 @@ contactForm.addEventListener('submit', e => {
   }
   
   makeImagesDraggable();
+
+  console.log("Mise à jour !");
