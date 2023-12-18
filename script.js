@@ -251,6 +251,7 @@ contactForm.addEventListener('submit', e => {
   }
   
   function deplacerImage(image, largeurHeader, hauteurHeader) {
+    if (image.classList.contains('draggable')) return;
     var positionX = parseFloat(image.style.left);
     var positionY = parseFloat(image.style.top);
     var vitesseX = parseFloat(image.getAttribute("data-vitesseX")) || (Math.random() - 0.5) * 3;
